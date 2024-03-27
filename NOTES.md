@@ -1,61 +1,100 @@
 # Linux Kernel Notes
 
-## Downloading
+---
 
-Linux kernel sources can be obtained from the official website: https://kernel.org/
+## Linux Kernel Build Process
 
-## Configuration
+This guide outlines the steps involved in building a custom Linux kernel:
 
-All configurations for the Linux kernel are located at the root of the source 
-in a file called .config.
+### 1. Downloading the source code
 
-While it's possible to configure directly from this file, it can be confusing 
-and less intuitive. To simplify this process, various tools have been developed.
-One such tool is menuconfig, which provides a curses interface for kernel 
-configuration. To open it, type: make menuconfig. Alternatively, you can use 
-xconfig or gconfig for a graphical interface.
+The official website for obtaining Linux kernel source code is: https://www.kernel.org/.
 
-## Compiling
+### 2. Kernel Configuration
 
-* To compile the Linux Kernel, use the following command: make -j$(nproc).
+* The kernel configuration file, .config, resides in the root directory of the source tree.
+* While manual editing is possible, it's recommended to use dedicated tools for better usability.
+* `make menuconfig` (curses interface) simplifies configuration.
+* Alternatively, use xconfig or gconfig for graphical interfaces.
+* During configuration, you choose which features to compile directly into the kernel and which ones will be loaded as modules later.
+* You can search a configuration in the curses interface by typing `/`.
 
-* To compile Linux Kernel modules separately, use: make modules.
+### 3. Compiling the Kernel
 
-Kernel modules are pieces of code that can be dynamically loaded into the 
-running kernel, providing additional functionality or support for specific 
-hardware. The compiled modules are typically placed in a separate directory, 
-often named modules. This directory structure is created to organize the modules.
+* To compile the entire kernel, use: `make -j$(nproc)`. The `-j$(nproc)` flag utilizes all available CPU cores for faster compilation.
+* To compile kernel modules separately, use: `make modules`.
 
-## Installing
+### 4. Installation
 
-* To install the Linux Kernel, execute: make install.
+* To install the compiled kernel image: `make install`.
+* This command copies the kernel executable to the /boot directory (or a location specified in your configuration).
+* The bootloader configuration might be updated to recognize the new kernel.
+* To install the compiled kernel modules: `make modules_install`.
+* This command installs the modules built earlier with `make modules` into designated system directories.
 
-The kernel image, which is the core executable of the Linux kernel, is copied 
-to the /boot directory or another location specified in the configuration.
-If applicable, the bootloader configuration is updated to include the new kernel.
-
-* For installing Linux Kernel modules, use: make modules_install.
-
-Running make modules_install focuses on installing the kernel modules that were 
-compiled in the earlier make modules step. The compiled kernel modules are copied 
-to the appropriate system directories, typically under /lib/modules/[kernel_version]/.
-
-## Finding Drivers
-
-## Initramfs or Initrd
-
-## Debugging
-
-## Performance
-
-## Power Management
+---
 
 ## Kernel Modules
 
+* Kernel modules are code sections that can be loaded dynamically into the running kernel.
+* They provide additional functionalities or support for specific hardware.
+* Compiled modules are typically placed in a dedicated directory named modules for better organization
+  (/lib/modules/KERNEL_VERSION).
+
+---
+
+## Finding Drivers
+
+* Use `dmesg` to view kernel boot messages for driver loading info.
+* Run `lsmod` to list currently loaded kernel modules (modules not actively in use won't be listed, even if they exist in the system).
+* Use `lspci`, `lsusb`, or `lshw` to gather details like vendor, model, and bus type.
+* Look for files related to drivers or hardware within the `Documentation` directory of the kernel source.
+* Exploring the kernel source code can reveal information about included drivers. Look for directories containing driver code specific to hardware types  
+
+---
+
+## Initramfs or Initrd
+
+<TODO>
+
+---
+
+## Debugging
+
+<TODO>
+
+---
+
+## Performance
+
+<TODO>
+
+---
+
+## Power Management
+
+<TODO>
+
+---
+
 ## Hardware Virtualization
+
+<TODO>
+
+---
 
 ## Kernel Hardening
 
+<TODO>
+
+---
+
 ## Networking Configuration
 
+<TODO>
+
+---
+
 ## Benchmarking
+
+<TODO>
