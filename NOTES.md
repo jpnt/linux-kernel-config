@@ -40,6 +40,7 @@ The official website for obtaining Linux kernel source code is: https://www.kern
 * They provide additional functionalities or support for specific hardware.
 * Compiled modules are typically placed in a dedicated directory named modules for better organization
   (/lib/modules/KERNEL_VERSION).
+* `make localmodconfig` creates minimal custom kernel config based on loaded modules for faster build times.
 
 ---
 
@@ -49,52 +50,30 @@ The official website for obtaining Linux kernel source code is: https://www.kern
 * Run `lsmod` to list currently loaded kernel modules (modules not actively in use won't be listed, even if they exist in the system).
 * Use `lspci`, `lsusb`, or `lshw` to gather details like vendor, model, and bus type.
 * Look for files related to drivers or hardware within the `Documentation` directory of the kernel source.
-* Exploring the kernel source code can reveal information about included drivers. Look for directories containing driver code specific to hardware types  
 
 ---
 
 ## Initramfs or Initrd
 
-<TODO>
+* Initramfs/Initrd is the temporary root filesystem loaded during boot.
+* Kernel loads Initramfs/Initrd early in the boot process.
+* Initramfs/Initrd provides essential drivers and tools needed to access and mount the real root filesystem.
+* Once mounted, the kernel hands over control to the real root FS for full system startup.
+* If your system uses very basic hardware with drivers already compiled directly into the kernel image (vmlinuz), 
+  it might be possible to boot without an initramfs.
 
 ---
 
 ## Debugging
 
-<TODO>
+* Use `dmesg` to view kernel log messages, potentially including details about errors or warnings during boot or system operation.
+* Enable KGDB during kernel compilation (CONFIG_KGDB=y), which allows connecting a debugger (like GDB) to the running kernel.
 
 ---
 
-## Performance
+## Performance and Power Management
 
-<TODO>
-
----
-
-## Power Management
-
-<TODO>
-
----
-
-## Hardware Virtualization
-
-<TODO>
-
----
-
-## Kernel Hardening
-
-<TODO>
-
----
-
-## Networking Configuration
-
-<TODO>
-
----
-
-## Benchmarking
-
-<TODO>
+* Choose the right CPUFreq governor for your needs. `powersave`, `performance`, etc.
+* Enable deeper CPU idle states (C-states) like C3 or C6 for lower power consumption during idle periods (search for idle= options).
+* Consider enabling workqueue power efficiency (workqueue.power_efficient=1) for potential power savings on laptops (might impact performance slightly).
+* Unload unused kernel modules (lsmod to see loaded modules, rmmod to unload). This frees up memory and reduces overhead.
