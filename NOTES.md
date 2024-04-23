@@ -14,14 +14,15 @@ The official website for obtaining Linux kernel source code is: https://www.kern
 
 * The kernel configuration file, .config, resides in the root directory of the source tree.
 * While manual editing is possible, it's recommended to use dedicated tools for better usability.
-* `make menuconfig` (curses interface) simplifies configuration.
+* `make menuconfig` or `make nconfig` (curses interface) simplifies configuration.
 * Alternatively, use xconfig or gconfig for graphical interfaces.
 * During configuration, you choose which features to compile directly into the kernel and which ones will be loaded as modules later.
 * You can search a configuration in the curses interface by typing `/`.
 
 ### 3. Compiling the Kernel
 
-* To compile the entire kernel, use: `make -j$(nproc)`. The `-j$(nproc)` flag utilizes all available CPU cores for faster compilation.
+* To compile the entire kernel, use: `make -j$(nproc)`. The `-j$(nproc)` flag utilizes all 
+  available CPU cores for faster compilation. Be sure to check temperatures and adjust this variable as needed.
 * To compile kernel modules separately, use: `make modules`.
 
 ### 4. Installation
@@ -41,6 +42,9 @@ The official website for obtaining Linux kernel source code is: https://www.kern
 * Compiled modules are typically placed in a dedicated directory named modules for better organization
   (/lib/modules/KERNEL_VERSION).
 * `make localmodconfig` creates minimal custom kernel config based on loaded modules for faster build times.
+* `modprobed-db` is a tool that serves as a database to manage linux kernel modules, in order to reduce compile
+  times and bloat. After installing modprobed-db, you will use the command `make LSMOD=$HOME/.config/modprobed.db 
+  localmodconfig` to build a kernel with the modules in the database. For more: https://github.com/graysky2/modprobed-db
 
 ---
 
