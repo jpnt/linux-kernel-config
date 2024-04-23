@@ -90,7 +90,7 @@ voidasus
           version: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
           serial: To Be Filled By O.E.M.
           slot: U3E1
-          size: 1599MHz
+          size: 400MHz
           capacity: 4200MHz
           width: 64 bits
           clock: 100MHz
@@ -272,7 +272,7 @@ voidasus
                 width: 64 bits
                 clock: 33MHz
                 capabilities: pm msi pciexpress bus_master cap_list ethernet physical wireless
-                configuration: broadcast=yes driver=rtw_8821ce driverversion=6.6.18_1 firmware=N/A ip=192.168.1.68 latency=0 link=yes multicast=yes wireless=IEEE 802.11
+                configuration: broadcast=yes driver=rtw_8821ce driverversion=6.6.23_1 firmware=N/A ip=172.18.158.124 latency=0 link=yes multicast=yes wireless=IEEE 802.11
                 resources: irq:158 ioport:3000(size=256) memory:84000000-8400ffff
         *-communication:1
              description: Communication controller
@@ -446,17 +446,19 @@ voidasus
           size: 476GiB (512GB)
           capabilities: gpt-1.00 partitioned partitioned:gpt
           configuration: guid=80ed735d-c5d5-465f-9225-247b82369bd1 logicalsectorsize=512 sectorsize=512 wwid=eui.0000000001000000e4d25c9953835501
-        *-volume:0 UNCLAIMED
+        *-volume:0
              description: Windows FAT volume
              vendor: mkfs.fat
              physical id: 1
              bus info: nvme@0:1,1
+             logical name: /dev/nvme0n1p1
+             logical name: /boot/efi
              version: FAT32
              serial: 4d64-7921
              size: 510MiB
              capacity: 511MiB
              capabilities: boot fat initialized
-             configuration: FATs=2 filesystem=fat
+             configuration: FATs=2 filesystem=fat mount.fstype=vfat mount.options=rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro state=mounted
         *-volume:1
              description: Linux swap volume
              vendor: Linux
@@ -481,4 +483,4 @@ voidasus
              size: 472GiB
              capacity: 472GiB
              capabilities: journaled extended_attributes large_files huge_files dir_nlink recover 64bit extents ext4 ext2 initialized
-             configuration: created=2022-09-09 14:51:07 filesystem=ext4 lastmountpoint=/ modified=2024-03-03 13:51:37 mount.fstype=ext4 mount.options=rw,relatime mounted=2024-03-03 13:51:39 state=mounted
+             configuration: created=2022-09-09 14:51:07 filesystem=ext4 lastmountpoint=/ modified=2024-04-23 10:32:45 mount.fstype=ext4 mount.options=rw,relatime mounted=2024-04-23 09:32:43 state=mounted
