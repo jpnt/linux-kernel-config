@@ -8,7 +8,7 @@ achieve the following:
 
 1. Documentation of Linux compilation and installation, from start to finish.
 2. Enhance system performance and resource utilization.
-3. Experiment the new Intel Xe driver.
+3. Experiment the new ![Intel Xe driver](https://docs.kernel.org/next/gpu/rfc/xe.html).
 4. Eliminate the use of initramfs (resulting in no kernel modules).
 
 ## Notes
