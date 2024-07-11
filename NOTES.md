@@ -80,7 +80,9 @@ This guide outlines the steps involved in building a custom Linux kernel:
 
 * Use `lspci`, `lsusb`, or `lshw` to gather details like vendor, model, and bus type.
 
-* Use `lspci -nk` to display kernel driver used by PCI device.
+* Use `lspci -nk` to display kernel drivers used by PCI devices.
+
+* Use `lsusb -t` to display kernel drivers used by USB devices.
 
 * Look for files related to drivers or hardware within the `Documentation` directory of the kernel source.
 
