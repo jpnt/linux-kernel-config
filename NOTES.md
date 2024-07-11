@@ -80,6 +80,8 @@ This guide outlines the steps involved in building a custom Linux kernel:
 
 * Use `lspci`, `lsusb`, or `lshw` to gather details like vendor, model, and bus type.
 
+* Use `lsipci -nk` to display kernel driver used by PCI device.
+
 * Look for files related to drivers or hardware within the `Documentation` directory of the kernel source.
 
 ---
@@ -102,8 +104,11 @@ This guide outlines the steps involved in building a custom Linux kernel:
 ## Generating initramfs
 
 * Using dracut: Example: dracut initramfs-6.9.9.img 6.9.9
+
 * For more information `man dracut`; https://man.voidlinux.org/dracut.8
+
 * Using mkinitcpio: Example: mkinitcpio --config /etc/mkinitcpio-custom.conf --generate /boot/initramfs-custom.img --kernel 5.7.12-arch1-1
+
 * For more information `man mkinitcpio`; https://wiki.archlinux.org/title/mkinitcpio
 
 ---
