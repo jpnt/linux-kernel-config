@@ -1,0 +1,85 @@
+0000:00:00.0 0600: 8086:9a14 (rev 01)
+	Subsystem: 1043:17d2
+0000:00:02.0 0300: 8086:9a49 (rev 01)
+	DeviceName: VGA
+	Subsystem: 1043:15cc
+	Kernel driver in use: i915
+	Kernel modules: i915
+0000:00:04.0 1180: 8086:9a03 (rev 01)
+	Subsystem: 1043:17d2
+	Kernel driver in use: proc_thermal
+	Kernel modules: processor_thermal_device_pci_legacy
+0000:00:08.0 0880: 8086:9a11 (rev 01)
+	Subsystem: 1043:17d2
+0000:00:0a.0 1180: 8086:9a0d (rev 01)
+	Kernel driver in use: intel_vsec
+	Kernel modules: intel_vsec
+0000:00:0e.0 0104: 8086:9a0b
+	Subsystem: 1043:17d2
+	Kernel driver in use: vmd
+	Kernel modules: vmd
+0000:00:14.0 0c03: 8086:a0ed (rev 20)
+	Subsystem: 1043:201f
+	Kernel driver in use: xhci_hcd
+	Kernel modules: xhci_pci
+0000:00:14.2 0500: 8086:a0ef (rev 20)
+	Subsystem: 1043:17d2
+0000:00:15.0 0c80: 8086:a0e8 (rev 20)
+	Subsystem: 1043:17d2
+	Kernel driver in use: intel-lpss
+	Kernel modules: intel_lpss_pci
+0000:00:15.1 0c80: 8086:a0e9 (rev 20)
+	Subsystem: 1043:17d2
+	Kernel driver in use: intel-lpss
+	Kernel modules: intel_lpss_pci
+0000:00:16.0 0780: 8086:a0e0 (rev 20)
+	Subsystem: 1043:17d2
+	Kernel driver in use: mei_me
+	Kernel modules: mei_me
+0000:00:17.0 0880: 8086:09ab
+	Subsystem: 1043:17d2
+0000:00:1c.0 0604: 8086:a0b8 (rev 20)
+	Subsystem: 1043:17d2
+	Kernel driver in use: pcieport
+0000:00:1c.3 0604: 8086:a0bb (rev 20)
+	Subsystem: 1043:17d2
+	Kernel driver in use: pcieport
+0000:00:1e.0 0780: 8086:a0a8 (rev 20)
+	Subsystem: 1043:17d2
+	Kernel driver in use: intel-lpss
+	Kernel modules: intel_lpss_pci
+0000:00:1e.2 0c80: 8086:a0aa (rev 20)
+	Subsystem: 1043:17d2
+	Kernel driver in use: intel-lpss
+	Kernel modules: intel_lpss_pci
+0000:00:1f.0 0601: 8086:a082 (rev 20)
+	Subsystem: 1043:17d2
+0000:00:1f.3 0403: 8086:a0c8 (rev 20)
+	Subsystem: 1043:1b72
+	Kernel driver in use: snd_hda_intel
+	Kernel modules: snd_hda_intel, snd_sof_pci_intel_tgl
+0000:00:1f.4 0c05: 8086:a0a3 (rev 20)
+	Subsystem: 1043:17d2
+	Kernel driver in use: i801_smbus
+	Kernel modules: i2c_i801
+0000:00:1f.5 0c80: 8086:a0a4 (rev 20)
+	Subsystem: 1043:17d2
+	Kernel driver in use: intel-spi
+	Kernel modules: spi_intel_pci
+0000:02:00.0 0280: 10ec:c821
+	DeviceName: WLAN
+	Subsystem: 1a3b:304b
+	Kernel driver in use: rtw_8821ce
+	Kernel modules: rtw88_8821ce
+10000:e0:17.0 0106: 8086:a0d3 (rev 20)
+	Subsystem: 1043:17d2
+	Kernel driver in use: ahci
+	Kernel modules: ahci
+10000:e0:1c.0 0880: 8086:09ab
+	Subsystem: 1043:17d2
+10000:e0:1c.4 0604: 8086:a0bc (rev 20)
+	Subsystem: 1043:17d2
+	Kernel driver in use: pcieport
+10000:e1:00.0 0108: 8086:f1aa (rev 03)
+	Subsystem: 8086:390f
+	Kernel driver in use: nvme
