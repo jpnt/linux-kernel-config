@@ -1,0 +1,6 @@
+#!/bin/sh
+# Quick driver overview
+
+lspci -nk | less -S ; \
+lsusb -t | less -S ; \
+ls -l /sys/dev/*/*/device/driver | less -S
