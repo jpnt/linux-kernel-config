@@ -144,6 +144,13 @@ This guide outlines the steps involved in building a custom Linux kernel:
 
 ## Intel Xe Graphics
 
+* To try the new experimental driver you need: linux >=6.8, tigerlake integrated
+  driver or newer or discrete intel graphics and mesa built with -Dintel-xe-kmd=enabled.
+
+* Then, run `lspci -nn | grep VGA` and add to your kernel parameters with the correct
+  PCI ID: `i915.force_probe=!9a49 xe.force_probe=9a49`. For grub you can do it
+  under /etc/defaults/grub in the GRUB_CMDLINE_LINUX_DEFAULT variable.
+
 * Does not seem to be able to be compiled statically into the kernel.
 
 * Modules that could not be compiled into the kernel so far:
