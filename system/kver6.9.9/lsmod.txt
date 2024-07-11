@@ -1,0 +1,6 @@
+Module                  Size  Used by
+xe                   2580480  0
+gpu_sched              65536  1 xe
+drm_suballoc_helper    12288  1 xe
+drm_gpuvm              40960  1 xe
+drm_exec               12288  2 drm_gpuvm,xe
