@@ -84,6 +84,8 @@ This guide outlines the steps involved in building a custom Linux kernel:
 
 * Use `lsusb -t` to display kernel drivers used by USB devices.
 
+* Use `ls -l /sys/dev/*/*/device/driver` to try and grab more device drivers information.
+
 * Look for files related to drivers or hardware within the `Documentation` directory of the kernel source.
 
 ---
