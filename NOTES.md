@@ -151,9 +151,16 @@ This guide outlines the steps involved in building a custom Linux kernel:
   PCI ID: `i915.force_probe=!9a49 xe.force_probe=9a49`. For grub you can do it
   under /etc/defaults/grub in the GRUB_CMDLINE_LINUX_DEFAULT variable.
 
-* Does not seem to be able to be compiled statically into the kernel.
+* Add the following modules to your initramfs, either by dracut or by iniramfs:
+  `add_drivers+=" xe gpu_sched drm_suballoc_helper drm_gpuvm drm_exec "`.
 
-* Modules that could not be compiled into the kernel so far:
+* NOTE: If you want to use the Xe drivers and not the i915, then the i915 drivers
+  cannot be STATICALLY compiled into the kernel, either don't compile them (risky)
+  or compile them as a kernel module.
+
+* Intel Xe graphics do not seem to be able to be compiled statically into the kernel.
+
+* Intel Xe graphics driver modules:
 ```c
   SYMLINK /lib/modules/6.9.9/build
   INSTALL /lib/modules/6.9.9/modules.order
