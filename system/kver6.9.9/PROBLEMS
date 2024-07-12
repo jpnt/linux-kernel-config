@@ -1,0 +1,24 @@
+- [x] wifi 8821ce. built-in doesnt seem to work (needs firmware)? lets try module
+
+- [x] scrolling with touchpad. driver? maybe hid-multitouch.
+
+- [ ] intel pstate / CPUFreq not available. where to even begin
+
+- [x] intel xe driver. As module
+
+- [x] ADD - intel-spi: Intel Corporation Tiger Lake-LP SPI Controller (rev 20)
+
+- [x] IGNORE - mei-me: 0000:00:16.0 Communication controller: Intel Corporation Tiger Lake-LP Management Engine Interface (rev 20)
+
+- [x] IGNORE - intel-vsec: 0000:00:0a.0 Signal processing controller: Intel Corporation Tigerlake Telemetry Aggregator Driver (rev 01)
+
+---
+
+NOT PROBLEMS
+
+- iTCO_wdt. dont even know what this is
+
+- serial8250
+
+- dw-apb-uart
+
