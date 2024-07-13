@@ -1,8 +1,10 @@
 - [x] wifi 8821ce. built-in doesnt seem to work (needs firmware)? lets try module
 
-- [x] scrolling with touchpad. driver? maybe hid-multitouch.
+- [x] scrolling with touchpad. driver? hid-multitouch.
 
 - [ ] intel pstate / CPUFreq not available. where to even begin
+	- acpi handler.sh does not work. begin here. try to compile acpi as module
+	- also noticed that fn (function) key does not light up. ASUS_WMI fixed it. Had to set some dependency first
 
 - [x] intel xe driver. As module
 

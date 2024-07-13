@@ -1,5 +1,15 @@
 Module                  Size  Used by
-xe                   2580480  0
+xe                   2580480  4
+i915                 4018176  0
+rtw88_8821ce           12288  0
+i2c_algo_bit           16384  2 xe,i915
+drm_buddy              20480  2 xe,i915
+rtw88_8821c            94208  1 rtw88_8821ce
+intel_gtt              20480  1 i915
+rtw88_pci              28672  1 rtw88_8821ce
+drm_display_helper    204800  2 xe,i915
+cec                    53248  3 drm_display_helper,xe,i915
+rtw88_core            229376  2 rtw88_pci,rtw88_8821c
 gpu_sched              65536  1 xe
 drm_suballoc_helper    12288  1 xe
 drm_gpuvm              40960  1 xe

@@ -1,0 +1,11 @@
+#!/bin/sh
+# system dump
+
+FOLDER="kver$(uname -r)"
+
+mkdir -p "$FOLDER"
+
+lsmod > "$FOLDER/lsmod.txt"
+lshw > "$FOLDER/lshw.txt"
+uname -a > "$FOLDER/uname-a.txt"
+cp -v "/boot/config-$(uname -r)" "$FOLDER/"

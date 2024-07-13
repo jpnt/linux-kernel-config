@@ -140,6 +140,9 @@ This guide outlines the steps involved in building a custom Linux kernel:
 * Unload unused kernel modules (lsmod to see loaded modules, rmmod to unload). This 
   frees up memory and reduces overhead.
 
+* For more: https://wiki.gentoo.org/wiki/Power_management/Processor
+            https://wiki.gentoo.org/wiki/Power_management/Guide
+
 ---
 
 ## Intel Xe Graphics
