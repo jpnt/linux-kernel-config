@@ -21,6 +21,9 @@ The last digit indicates the score. Higher the better.
 * xe driver, linux6.9.9, mesa 24.1.3, asus_wmi acpi driver
   *  FurMark,Mesa Intel(R) Xe Graphics (TGL GT2),4.6 (Core Profile) Mesa 24.1.3,1920,1080,YES,Off,15,60000,0,953
 
+* i915 driver, linux6.9.9, mesa 24.1.3, asus_wmi acpi driver
+  *  TODO
+
 ---
 
 ## POWER CONSUMPTION
@@ -28,14 +31,14 @@ The last digit indicates the score. Higher the better.
 * Both systems used the same tlp.conf file. Using both asus_wmi acpi driver
 
 * i915 driver, linux 6.6.38
-  * powertop at idle: ~9.2W
-  * doing furmark: ~26.8W
+  * powertop at idle: TODO
+  * doing furmark: TODO
+
+* i915 driver, linux 6.9.9
+  * powertop at idle: TODO
+  * doing furmark: TODO
 
 * xe driver, linux 6.9.9
-  * powertop at idle: ~3.9W
-  * doing furmark: ~17.4W
+  * powertop at idle: TODO
+  * doing furmark: TODO
 
-I still do not believe that we got so little power consumption with this new driver,
-the performance may be a bit slower but I noticed that it was significantly cooler 
-on the newer driver. If you're using a laptop and your top priority is to save battery,
-then from this benchmark alone we can conclude that it is worth it a try!
