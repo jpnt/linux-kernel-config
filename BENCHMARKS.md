@@ -6,21 +6,25 @@
 
 * xe driver, linux 6.9.9, mesa 24.1.3
 
+```csv
 Module,Renderer,ApiVersion,Width,Height,Fullscreen,AntiAliasing,AvgFPS,Duration,MaxGpuTemp,Score
 GiMark,Mesa Intel(R) Xe Graphics (TGL GT2),4.6 (Core Profile) Mesa 24.1.3,1920,1080,YES,Off,24,60000,0,1484
 Plot3D,Mesa Intel(R) Xe Graphics (TGL GT2),4.6 (Core Profile) Mesa 24.1.3,1920,1080,YES,Off,121,60000,0,7289
 PixMark Piano,Mesa Intel(R) Xe Graphics (TGL GT2),4.6 (Core Profile) Mesa 24.1.3,1920,1080,YES,Off,11,60000,0,711
 Triangle,Mesa Intel(R) Xe Graphics (TGL GT2),4.6 (Core Profile) Mesa 24.1.3,1920,1080,YES,Off,410,60000,0,24629
 FurMark,Mesa Intel(R) Xe Graphics (TGL GT2),4.6 (Core Profile) Mesa 24.1.3,1920,1080,YES,Off,16,60000,0,967
+```
 
 * i915 driver, linux 6.9.9, mesa 24.1.3
 
+```csv
 Module,Renderer,ApiVersion,Width,Height,Fullscreen,AntiAliasing,AvgFPS,Duration,MaxGpuTemp,Score
 GiMark,Mesa Intel(R) Xe Graphics (TGL GT2),4.6 (Core Profile) Mesa 24.1.3,1920,1080,YES,Off,28,60000,0,1693
 Plot3D,Mesa Intel(R) Xe Graphics (TGL GT2),4.6 (Core Profile) Mesa 24.1.3,1920,1080,YES,Off,178,60000,0,10728
 PixMark Piano,Mesa Intel(R) Xe Graphics (TGL GT2),4.6 (Core Profile) Mesa 24.1.3,1920,1080,YES,Off,13,60000,0,796
 Triangle,Mesa Intel(R) Xe Graphics (TGL GT2),4.6 (Core Profile) Mesa 24.1.3,1920,1080,YES,Off,353,60000,0,21194
 FurMark,Mesa Intel(R) Xe Graphics (TGL GT2),4.6 (Core Profile) Mesa 24.1.3,1920,1080,YES,Off,30,60000,0,1848
+```
 
 From this benchmarks, we can see that the new driver still has optimizations to do, because the old drivers outperform it
 in the majority of tests, except the triangle benchmark where the avgfps was 410 xe and 353 on i915.
