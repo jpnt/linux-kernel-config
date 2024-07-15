@@ -53,6 +53,16 @@ This guide outlines the steps involved in building a custom Linux kernel:
 
 ---
 
+### 5. Updating the kernel
+
+* To update to a newer kernel version just copy your old `.config` file to the root
+  of the new kernel version and do `make oldconfig` to update the config file to match the newer version.
+
+* `make oldconfig` will ask the user for new configuration options. If you just want
+  to set all the options to their default without being asked do `make olddefconfig`.
+
+---
+
 ## Kernel Modules
 
 * Kernel modules are code sections that can be loaded dynamically into the running kernel.
