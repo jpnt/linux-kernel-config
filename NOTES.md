@@ -61,6 +61,9 @@ This guide outlines the steps involved in building a custom Linux kernel:
 * `make oldconfig` will ask the user for new configuration options. If you just want
   to set all the options to their default without being asked do `make olddefconfig`.
 
+* If you wish to remove binary blobs that take up to much space in your kernel directory that you do not
+  need anymore use `make distclean`.
+
 ---
 
 ## Kernel Modules
@@ -137,6 +140,22 @@ This guide outlines the steps involved in building a custom Linux kernel:
 
 ---
 
+## Tiny Kernel **TODO**
+
+* https://tiny.wiki.kernel.org/start
+
+* `make tinyconfig`
+
+---
+
+## Kernel Options Optimization **TODO**
+
+* In userspace, if you use grub, you can edit them at `/etc/default/grub` in the **GRUB_CMDLINE_LINUX_DEFAULT** variable.
+  * If you prefer directly in grub, you can edit them pressing `e` than change the kernel options line. This will not save
+    the options! So use this to your advantage.
+
+---
+
 ## Performance and Power Management
 
 * Choose the right CPUFreq governor for your needs. `powersave`, `performance`, etc.
@@ -164,7 +183,7 @@ This guide outlines the steps involved in building a custom Linux kernel:
 
 * Then, run `lspci -nn | grep VGA` and add to your kernel parameters with the correct
   PCI ID: `i915.force_probe=!9a49 xe.force_probe=9a49`. For grub you can do it
-  under /etc/defaults/grub in the GRUB_CMDLINE_LINUX_DEFAULT variable.
+  under ``/etc/defaults/grub`` in the **GRUB_CMDLINE_LINUX_DEFAULT** variable.
 
 * Add the following modules to your initramfs, either by dracut or by iniramfs:
   `add_drivers+=" xe gpu_sched drm_suballoc_helper drm_gpuvm drm_exec "`.
