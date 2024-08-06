@@ -158,7 +158,8 @@ This guide outlines the steps involved in building a custom Linux kernel:
 
 ## Performance and Power Management
 
-* Choose the right CPUFreq governor for your needs. `powersave`, `performance`, etc.
+* Choose the right CPU frequency governor for your needs. `powersave`, `performance`, etc.
+  * Experiment with amd-pstate or intel-pstate.
 
 * Enable deeper CPU idle states (C-states) like C3 or C6 for lower power consumption 
   during idle periods (search for idle= options).
