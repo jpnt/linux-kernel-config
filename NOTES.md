@@ -120,13 +120,13 @@ This guide outlines the steps involved in building a custom Linux kernel:
 
 ## Generating initramfs
 
-* Using dracut: Example: dracut initramfs-6.9.9.img 6.9.9
+* Using dracut: dracut [OPTION...] [<image> [<kernel version (inside /lib/modules)]]
+  * Example: dracut initramfs-6.9.9.img 6.9.9
+  * For more information `man dracut`; https://man.voidlinux.org/dracut.8
 
-* For more information `man dracut`; https://man.voidlinux.org/dracut.8
-
-* Using mkinitcpio: Example: mkinitcpio --config /etc/mkinitcpio-custom.conf --generate /boot/initramfs-custom.img --kernel 5.7.12-arch1-1
-
-* For more information `man mkinitcpio`; https://wiki.archlinux.org/title/mkinitcpio
+* Using mkinitcpio: mkinitcpio [options]
+  * Example: mkinitcpio --config /etc/mkinitcpio-custom.conf --generate /boot/initramfs-custom.img --kernel 5.7.12-arch1-1
+  * For more information `man mkinitcpio`; https://wiki.archlinux.org/title/mkinitcpio
 
 ---
 
